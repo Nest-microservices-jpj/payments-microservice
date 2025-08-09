@@ -15,8 +15,8 @@ export class PaymentsService {
     @Inject(NATS_SERVICE) private readonly client: ClientProxy
   ) {}
 
-  async createPaymentSession(paymensessionDto: PaymentSessionDto) {
-    const { currency, items, orderId } = paymensessionDto;
+  async createPaymentSession(paymentsessionDto: PaymentSessionDto) {
+    const { currency, items, orderId } = paymentsessionDto;
     const lineItems = items.map((item) => {
       return {
         price_data: {
